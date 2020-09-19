@@ -54,9 +54,8 @@ class Ball{
      yspeed*=-1;
 
     }
-    yspeed+=g;
     this.y+=yspeed;
-    
+    yspeed+=g;
     /*
     if(yspeed <= 0){
       yspeed=0;
