@@ -26,6 +26,7 @@ class Ball{
     this.clr = 'red';
     this.goingRight = true;
     this.goingDown = true;
+    this.cnt=1;
   }
   
   show(){
@@ -48,17 +49,10 @@ class Ball{
 
     ///// Fisica gravitacional
     if(this.y + this.d/2 >=height/2){
-      //this.goingDown = false;
-     // print(yspeed)
-
-     yspeed*=-1;
-
+      this.goingDown = false;
     }
-    this.y+=yspeed;
-    yspeed+=g;
-    /*
-    if(yspeed <= 0){
-      yspeed=0;
+  
+    if(yspeed == 0){
       this.goingDown = true;
     }
     /////
@@ -70,8 +64,8 @@ class Ball{
       yspeed -= g;
       this.y-=yspeed;
     }
-    /////
-    */
+    //
+    
     ///// Movimento horizontal
     if(this.goingRight){
       this.x += xspeed;
