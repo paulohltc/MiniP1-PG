@@ -1,5 +1,3 @@
-var xspeed = 5;
-var yspeed = 10;
 var g = 0.5;
 var time = 0;
 
@@ -25,8 +23,12 @@ class Ball{
     this.y = height/2-this.d/2;
     this.clr = 'red';
     this.goingRight = true;
-    this.goingDown = true;
-    this.cnt=1;
+    this.goingDown = false;
+    this.vx=5;
+    
+    this.y0 = height/2-this.d/2;
+    this.vy0 = -10;
+    this.cnt=0;
   }
   
   show(){
@@ -38,41 +40,28 @@ class Ball{
   
   move(){
     ///// Checkar Limite horizontal
-    if(this.x >= width-30){
+    if(this.x >= width-this.d/2){
       this.goingRight = false;
     }
-    else if(this.x <= 30){
+    else if(this.x <= this.d/2){
       this.goingRight = true;
       print(time);
     }
-    //////
-
-    ///// Fisica gravitacional
-    if(this.y + this.d/2 >=height/2){
-      this.goingDown = false;
-    }
-  
-    if(yspeed == 0){
-      this.goingDown = true;
-    }
-    /////
-    ///// Movimento vertical
-    if(this.goingDown){
-      this.y+=yspeed;
-      yspeed+=g;
-    }else{
-      yspeed -= g;
-      this.y-=yspeed;
-    }
-    //
     
-    ///// Movimento horizontal
+    // Movimento vertical
+    this.cnt++;
+    this.y=this.y0 +this.vy0*this.cnt +g*pow(this.cnt,2)/2;
+    if(this.y>=this.y0){
+      this.y=this.y0;
+      this.cnt=0;
+     
+    }
+    // Movimento horizontal
     if(this.goingRight){
-      this.x += xspeed;
+      this.x += this.vx;
     }
     else{
-      this.x -= xspeed;
+      this.x -= this.vx;
     }
-    /////
   } 
 }
