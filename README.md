@@ -6,13 +6,4 @@
 
 
 
-<a href="https://MiniP1-PG.lehydra.repl.co">Questao 1</a>
-<br>
-<a href="https://editor.p5js.org/paulohltc/present/Cq0tB6mJy">Questao 2</a>
-<br>
-<a href="https://MiniP1.lehydra.repl.co">Questao 3</a>
-<br>
-<a href="https://MiniP1Q4.lehydra.repl.co">Questao 4</a>
-<br>
-<a href="https://MiniP1Q5.lehydra.repl.co">Questao 5</a>
-<br>
+<a href="https://editor.p5js.org/gabsho/collections/QBH3OTR4F">Veja as questões</a>
